@@ -29,3 +29,34 @@ Process.Start(proc1);
 [Shutdown Scheduler](https://github.com/Kttra/ShutdownScheduler) - A program that schedules a shutdown for windows devices. The program runs the requested command through a hidden console.
 
 [Console Properties](https://github.com/Kttra/ConsoleProperties) - C++ project that focuses on console use just like this repo.
+
+## CLI Wrap
+A popular nuget package used to create applications using command line is the [cliwrap package](https://github.com/Tyrrrz/CliWrap).
+
+#### Basics
+```cs
+using CliWrap;
+using CliWrap.Buffered; //Allows us to capture input and output more easily
+
+var dockerresults = await Cli.Wrap("git").WithArguments("--version").ExecuteBufferedAsync();
+Console.WriteLine(dockerresults.StandardOutput); //Output data produced by underlying process
+
+var powershell = await Cli.Wrap("powershell").WithWorkingDirectory(@"C:\").
+    WithArguments(new[] { "echo hello", "world" }).ExecuteBufferedAsync();
+Console.WriteLine(powershell.StandardOutput); //Output data produced by underlying process
+
+var powershell2 = await Cli.Wrap("powershell").WithWorkingDirectory(@"C:\").
+    WithArguments("echo hello world; Get-Random").ExecuteBufferedAsync();
+Console.WriteLine(powershell2.StandardOutput); //Output data produced by underlying process
+
+/*  Example output:
+    git version 2.35.1.windows.2
+
+    hello
+    world
+
+    hello
+    world
+    213197604
+*/
+```
