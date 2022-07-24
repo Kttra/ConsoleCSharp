@@ -24,12 +24,6 @@ proc1.WindowStyle = ProcessWindowStyle.Hidden;
 Process.Start(proc1);
 ```
 
-**Related Projects**
-----------
-[Shutdown Scheduler](https://github.com/Kttra/ShutdownScheduler) - A program that schedules a shutdown for windows devices. The program runs the requested command through a hidden console.
-
-[Console Properties](https://github.com/Kttra/ConsoleProperties) - C++ project that focuses on console use just like this repo.
-
 ## CLI Wrap
 A popular nuget package used to create applications using command line is the [cliwrap package](https://github.com/Tyrrrz/CliWrap).
 
@@ -60,3 +54,9 @@ Console.WriteLine(powershell2.StandardOutput); //Output data produced by underly
     213197604
 */
 ```
+
+**Related Projects**
+----------
+[Shutdown Scheduler](https://github.com/Kttra/ShutdownScheduler) - A program that schedules a shutdown for windows devices. The program runs the requested command through a hidden console.
+
+[Console Properties](https://github.com/Kttra/ConsoleProperties) - C++ project that focuses on console use just like this repo.
