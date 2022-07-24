@@ -27,7 +27,6 @@ Process.Start(proc1);
 ## CLI Wrap
 A popular nuget package used to create applications using command line is the [cliwrap package](https://github.com/Tyrrrz/CliWrap).
 
-#### Basics
 ```cs
 using CliWrap;
 using CliWrap.Buffered; //Allows us to capture input and output more easily
@@ -37,11 +36,11 @@ Console.WriteLine(dockerresults.StandardOutput); //Output data produced by under
 
 var powershell = await Cli.Wrap("powershell").WithWorkingDirectory(@"C:\").
     WithArguments(new[] { "echo hello", "world" }).ExecuteBufferedAsync();
-Console.WriteLine(powershell.StandardOutput); //Output data produced by underlying process
+Console.WriteLine(powershell.StandardOutput);
 
 var powershell2 = await Cli.Wrap("powershell").WithWorkingDirectory(@"C:\").
     WithArguments("echo hello world; Get-Random").ExecuteBufferedAsync();
-Console.WriteLine(powershell2.StandardOutput); //Output data produced by underlying process
+Console.WriteLine(powershell2.StandardOutput);
 
 /*  Example output:
     git version 2.35.1.windows.2
@@ -57,6 +56,10 @@ Console.WriteLine(powershell2.StandardOutput); //Output data produced by underly
 
 **Related Projects**
 ----------
-[Shutdown Scheduler](https://github.com/Kttra/ShutdownScheduler) - A program that schedules a shutdown for windows devices. The program runs the requested command through a hidden console.
-
 [Console Properties](https://github.com/Kttra/ConsoleProperties) - C++ project that focuses on console use just like this repo.
+
+[File Name Grabber](https://github.com/Kttra/FileNameGrabber) - C++ program that uses console commands to read the file name's in a directory and copies the output into the system's clipboard.
+
+[Shutdown Scheduler](https://github.com/Kttra/ShutdownScheduler) - C# program that schedules a shutdown for windows devices. The program runs the requested command through a hidden console.
+
+[Time Adder](https://github.com/Kttra/TimeAdder) - C++ program that receives time inputs from the user and adds up the time.
