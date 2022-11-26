@@ -14,7 +14,7 @@ System.Diagnostics.Process.Start("CMD.exe", cmdCommand);
 #### Example of running a command silently in the background:
 ```cs
 var proc1 = new ProcessStartInfo();
-string aCommand = "/C ver"; //Command to run on cmd
+string aCommand = "ver"; //Command to run on cmd
 proc1.UseShellExecute = true;
 proc1.WorkingDirectory = @"C:\Windows\System32";
 proc1.FileName = @"C:\Windows\System32\cmd.exe";
