@@ -19,7 +19,7 @@ proc1.UseShellExecute = true;
 proc1.WorkingDirectory = @"C:\Windows\System32";
 proc1.FileName = @"C:\Windows\System32\cmd.exe";
 proc1.Verb = "runas"; //behave as if the process has been started from Explorer with the "Run as Administrator" menu command
-proc1.Arguments = "/c " + aCommand; //"/c" tells the prompt to run and terminate afterwards
+proc1.Arguments = "/c " + aCommand; //"/c" tells the prompt to run and terminate afterwards | "/k" executes a process passed as an argument
 proc1.WindowStyle = ProcessWindowStyle.Hidden;
 Process.Start(proc1);
 ```
